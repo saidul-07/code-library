@@ -32,6 +32,7 @@ void solve(){
     if(x>=y)yes;
     else no;
     
+     
 }
 int main() {
     fast();
@@ -42,7 +43,7 @@ int main() {
     #endif
     //seive();
     int t,i;t=1;
-   //cin>>t;
+   cin>>t;
     while(t--)solve();
     return 0;
 }

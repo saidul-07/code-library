@@ -28,9 +28,16 @@ using namespace std;
 
 
 void solve(){
-    int x, y; cin >> x >> y;
-    if(x>=y)yes;
-    else no;
+    int n, x; cin >> n >> x;
+    ll sum=0,i=n;
+    while (x--)
+    {
+        sum+=(1<<i);
+        i--;
+    }
+    for(int j=1; j<=i; j++)
+        sum-=(1<<j);
+    cout<< sum << endl;
     
 }
 int main() {
@@ -42,7 +49,7 @@ int main() {
     #endif
     //seive();
     int t,i;t=1;
-   //cin>>t;
+   cin>>t;
     while(t--)solve();
     return 0;
 }
