@@ -16,19 +16,21 @@ using namespace std;
 #define      precision(n)  fixed<<setprecision(n)  //example cout<<precision(3)<<n<<endl;
 
 void solve(){
-  ll n; cin >> n;
-  vi v; v.pb(n);
-  bitset<65>s(n);
-  for ( ll i = 0; i< 64; i++){
-    if( s[i]){
-      ll x = n^(1LL<<i);
-      if(x > 0) v.pb(x);
-    }
+  int n, q; cin >> n >> q;
+  vi v(n), prexor(n+1); ivi (v);
+  prexor[0]=0, prexor[1]=v[0];
+  for ( int i = 2; i <= n; i++){
+    prexor[i] = prexor[i-1]^v[i-1];
   }
-  reverse(v.begin(), v.end());
-  cout << v.size() << endl;
-  for (auto u: v)cout << u << ' ';
-  cout << endl;
+  //for( auto u: prexor) cout << u<<' ';
+
+  while (q--)
+  {
+    int a, b; cin >> a >> b;
+    cout << (prexor[a-1] ^ prexor[b]) << endl;
+  }
+  
+  
   
 }       
 int main() {
@@ -40,7 +42,7 @@ int main() {
     #endif
     //seive();
     int t,i;t=1;
-   cin>>t;
+   //cin>>t;
     while(t--)solve();
     return 0;
 }
