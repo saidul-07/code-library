@@ -16,26 +16,7 @@ using namespace std;
 #define      precision(n)  fixed<<setprecision(n)  //example cout<<precision(3)<<n<<endl;
   
 void solve(){
-      int n; cin >> n;
       
-      ll sum = 0, sum1 = 0, sum2 = 0;
-      vi a(n), b(n-1), c(n-2);
-      fo(0,n){
-          cin >> a[i];
-          sum += a[i];
-      }
-      fo(0,n-1){
-        cin >> b[i];
-        sum1 += b[i];
-      }
-      fo(0, n-2){
-        cin >> c[i];
-        sum2 =+ c[i];
-      }
-
-      cout << sum << sum1 << sum2 << endl;
-      cout << sum-sum1 << endl;
-      cout << sum1-sum2 << endl;
           
 }      
 int main() {

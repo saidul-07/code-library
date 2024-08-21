@@ -17,26 +17,19 @@ using namespace std;
   
 void solve(){
       int n; cin >> n;
-      
-      ll sum = 0, sum1 = 0, sum2 = 0;
-      vi a(n), b(n-1), c(n-2);
-      fo(0,n){
-          cin >> a[i];
-          sum += a[i];
+      if(n%2==0){
+        cout << -1 << endl;
+        return;
       }
-      fo(0,n-1){
-        cin >> b[i];
-        sum1 += b[i];
-      }
-      fo(0, n-2){
-        cin >> c[i];
-        sum2 =+ c[i];
-      }
-
-      cout << sum << sum1 << sum2 << endl;
-      cout << sum-sum1 << endl;
-      cout << sum1-sum2 << endl;
-          
+      vi v(n);
+      int k = 1;
+      for (int i=n/2; i<n; i++)
+            v[i] = k++;
+      k = n;
+      for(int i=0; i<n/2; i++)
+            v[i]=  k--;
+        for (auto u:v) cout << u << ' '; 
+        cout << endl;   
 }      
 int main() {
     fast();
@@ -47,7 +40,7 @@ int main() {
     #endif
     //seive();
     int t,i;t=1;
-    //cin>>t;
+    cin>>t;
     while(t--)solve();
     return 0;
 }
